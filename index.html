@@ -8,29 +8,40 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
   <link rel="stylesheet" href="superhero.css">
+  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
   <link rel="stylesheet" href="style.css">
   <title>Clicker Game</title>
 </head>
 
 <body>
-  <header class="text-center py-3 bg-secondary">
-    <h1 class="p-0">Clicker Game</h1>
-  </header>
-  <main class="container-flex">
+  <header class="container-fluid bg-light text-dark">
     <div class="row">
-      <div class="col-4">
-        <img src="//placekitten.com/200/200" onclick="mine()" alt="clicker-img">
+      <h1 class="col-12">Fleet</h1>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="" id="drone-fleet"> </div>
+        <div class="" id="plane-fleet"> </div>
       </div>
-      <div class="col-4">
-        <h1 id="cheese-count"></h1>
+    </div>
+  </header>
+  <main class="container-fluid grow py-5 text-light bg-secondary">
+    <div class="row justify-content-around">
+      <div class="col-md-3 bg-dark shadow-sm">
+        <h1 id="package-count"></h1>
       </div>
-      <div class="col-4" id="buttons">
-
+      <div class="col-md-4 shadow-sm">
+        <div class="row hero-img align-items-center justify-content-center">
+          <div class="col-12 d-flex justify-content-center">
+            <img class="click-img" src="box.png" onclick="mine()" alt="clicker-img">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 bg-dark d-flex flex-column shadow-sm" id="buttons">
       </div>
     </div>
   </main>
-  <footer class="text-center bg-secondary pt-2">
-    <p class="p-0">Made with ❤ by Amanda Rice</p>
+  <p class="p-0">Made with ❤ by Amanda Rice</p>
   </footer>
   <script src="script.js"></script>
 </body>

@@ -1,32 +1,36 @@
-let cheeseCount = 0
+let packageCount = 0
 
 let clickUpgrades = {
-  pickaxes: {
-    name: 'Pickaxes',
+  gas: {
+    name: 'Gas',
     price: 20,
     quantity: 0,
-    multiplier: 1
+    multiplier: 1,
+    image: 'ic:baseline-local-gas-station'
   },
-  drills: {
-    name: 'Drills',
+  trucks: {
+    name: 'Trucks',
     price: 100,
     quantity: 0,
-    multiplier: 3
+    multiplier: 3,
+    image: 'icomoon-free:truck'
   }
 }
 
 let autoUpgrades = {
-  robots: {
-    name: 'Robots',
+  drones: {
+    name: 'Drones',
     price: 500,
     quantity: 0,
-    multiplier: 20
+    multiplier: 20,
+    image: 'healthicons:drone'
   },
-  rovers: {
-    name: 'Rovers',
+  planes: {
+    name: 'Planes',
     price: 2000,
     quantity: 0,
-    multiplier: 50
+    multiplier: 50,
+    image: 'bx:bxs-plane-alt'
   }
 
 }
@@ -38,36 +42,48 @@ function mine() {
     let addTo = item.quantity * item.multiplier
     clickModifier += addTo
   }
-  cheeseCount = cheeseCount + 1 + clickModifier
+  packageCount = packageCount + 1 + clickModifier
   update()
 }
 
 function update() {
-  document.getElementById('cheese-count').innerText = cheeseCount
+  document.getElementById('package-count').innerText = packageCount
 }
 
 function buyItems(toBuy, upgradeType) {
-  let objToPurchase = upgradeType[toBuy]
-  if (objToPurchase.price <= cheeseCount) {
+  console.log(toBuy, upgradeType)
+  let objToPurchase = {}
+  if (upgradeType == 'auto') {
+    objToPurchase = autoUpgrades[toBuy]
+  }
+  else {
+    objToPurchase = clickUpgrades[toBuy]
+  }
+  if (objToPurchase.price <= packageCount) {
     objToPurchase.quantity++
-    cheeseCount -= objToPurchase.price
+    packageCount -= objToPurchase.price
   }
   update()
 }
 
 function drawButtons() {
   let template = ''
-  let upgrades = [autoUpgrades, clickUpgrades]
-
-  upgrades.forEach(upgrade => {
-    for (let key in upgrade) {
-      let type = upgrade[key]
-      template +=
-        `
-      <button id="${key}-button" onclick="buyItems('${key}, ${upgrade.constructor.name}')">${type.name}!</button>
+  for (let key in clickUpgrades) {
+    let type = clickUpgrades[key]
+    template +=
       `
-    }
-  })
+      <p class="iconify custom-icon" id="${key}-button" onclick="buyItems('${key}', 'click')" data-icon="${type.image}" data-inline="false">
+      </p>
+      `
+  }
+  for (let key in autoUpgrades) {
+    let type = autoUpgrades[key]
+    template +=
+      `
+      <p class="iconify custom-icon" id="${key}-button" onclick="buyItems('${key}', 'auto')" data-icon="${type.image}" data-inline="false">
+      </p>
+      `
+  }
   document.getElementById('buttons').innerHTML = template
 }
 
@@ -78,7 +94,7 @@ function collectAutoUpgrades() {
     let addTo = item.quantity * item.multiplier
     autoModifier += addTo
   }
-  cheeseCount += autoModifier
+  packageCount += autoModifier
   update()
 }
 

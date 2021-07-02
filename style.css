@@ -10,3 +10,15 @@ main{
 .custom-height{
   height: 500px;
 }
+.click-img{
+  height: 200px;
+  width: 200px
+}
+.hero-img {
+  min-height: 80vh;
+  background-image: url(https://media.giphy.com/media/tQgB6lM6XCle8/giphy.gif);
+  background-size: cover;
+}
+.custom-icon{
+  font-size: 75pt;
+}
