@@ -15,10 +15,21 @@ main{
   width: 200px
 }
 .hero-img {
-  min-height: 80vh;
+  min-height: 65vh;
   background-image: url(https://media.giphy.com/media/tQgB6lM6XCle8/giphy.gif);
   background-size: cover;
 }
 .custom-icon{
   font-size: 75pt;
+}
+.custom-font{
+  font-size: 50pt;
+}
+.bottom-col{
+  float: none;
+  display: table-cell;
+  vertical-align: bottom;
+}
+.badge-img{
+  max-height: 100px;
 }

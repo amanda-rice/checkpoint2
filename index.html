@@ -15,33 +15,48 @@
 
 <body>
   <header class="container-fluid bg-light text-dark">
-    <div class="row">
-      <h1 class="col-12">Fleet</h1>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <div class="" id="drone-fleet"> </div>
-        <div class="" id="plane-fleet"> </div>
+    <div class="row text-center align-items-start">
+      <div class="col-3 align-self-center" id="badge">
+        <img src="intern.png" class="badge-img" alt="">
+      </div>
+      <div class="col-9 text-right">
+        <p class="custom-font text-break" id="package-count"></p>
+        <h2>Package Count</h2>
       </div>
     </div>
   </header>
   <main class="container-fluid grow py-5 text-light bg-secondary">
-    <div class="row justify-content-around">
-      <div class="col-md-3 bg-dark shadow-sm">
-        <h1 id="package-count"></h1>
+    <div class="row justify-content-around d-flex">
+      <div class="col-md-3 bg-dark shadow-sm text-center d-flex flex-column p-0">
+        <div class="flex-fill">
+          <h1 class="px-3 pt-3">Fleet:</h1>
+          <div class="px-3" id="gas-fleet"></div>
+          <div class="px-3" id="trucks-fleet"></div>
+          <div class="px-3" id="drones-fleet"></div>
+          <div class="px-3 pb-3" id="planes-fleet"></div>
+        </div>
+        <div class=" bg-light bottom-col text-dark text-left">
+          <h4 class="px-3 pt-3">Fleet Counts</h4>
+          <div class="px-3">Gas: <span id="gas-fleet-num"></span></div>
+          <div class="px-3">Trucks: <span id="trucks-fleet-num"></span></div>
+          <div class="px-3">Drones: <span id="drones-fleet-num"></span></div>
+          <div class="px-3 pb-3">Planes: <span id="planes-fleet-num"></span></div>
+
+        </div>
       </div>
-      <div class="col-md-4 shadow-sm">
+      <div class="col-md-4 shadow-sm align-self-start">
         <div class="row hero-img align-items-center justify-content-center">
           <div class="col-12 d-flex justify-content-center">
             <img class="click-img" src="box.png" onclick="mine()" alt="clicker-img">
           </div>
         </div>
       </div>
-      <div class="col-md-3 bg-dark d-flex flex-column shadow-sm" id="buttons">
+      <div class="col-md-3 bg-dark d-flex flex-column shadow-sm py-4 px-4" id="buttons">
       </div>
     </div>
   </main>
-  <p class="p-0">Made with ❤ by Amanda Rice</p>
+  <footer class="text-center">
+    <p class="p-0">Made with ❤ by Amanda Rice</p>
   </footer>
   <script src="script.js"></script>
 </body>
