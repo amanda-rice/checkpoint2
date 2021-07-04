@@ -26,7 +26,8 @@ h4{
 }
 .click-img{
   height: 200px;
-  width: 200px
+  width: 200px;
+  touch-action: manipulation
 }
 .hero-img {
   min-height: 75vh;
