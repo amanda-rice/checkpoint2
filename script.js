@@ -1,38 +1,62 @@
 let packageCount = 0
 
 let clickUpgrades = {
-  gas: {
-    name: 'Gas',
+  garages: {
+    name: 'Garages',
     price: 20,
     quantity: 0,
     multiplier: 1,
-    image: 'ic:baseline-local-gas-station',
+    image: 'mdi:garage-variant',
     reached: false
   },
-  trucks: {
-    name: 'Trucks',
-    price: 100,
+  warehouses: {
+    name: 'Warehouses',
+    price: 300,
     quantity: 0,
     multiplier: 3,
-    image: 'icomoon-free:truck',
+    image: 'mdi:warehouse',
     reached: false
   }
 }
 
 let autoUpgrades = {
+  trucks: {
+    name: 'Trucks',
+    price: 50,
+    quantity: 0,
+    multiplier: 10,
+    image: 'icomoon-free:truck',
+    reached: false
+  },
   drones: {
     name: 'Drones',
-    price: 500,
+    price: 150,
     quantity: 0,
     multiplier: 20,
     image: 'healthicons:drone',
     reached: false
   },
-  planes: {
-    name: 'Planes',
-    price: 2000,
+  trains: {
+    name: 'Trains',
+    price: 500,
     quantity: 0,
     multiplier: 50,
+    image: 'ic:baseline-train',
+    reached: false
+  },
+  boats: {
+    name: 'Boats',
+    price: 3000,
+    quantity: 0,
+    multiplier: 100,
+    image: 'ic:round-directions-boat',
+    reached: false
+  },
+  planes: {
+    name: 'Planes',
+    price: 10000,
+    quantity: 0,
+    multiplier: 250,
     image: 'bx:bxs-plane-alt',
     reached: false
   }
@@ -83,7 +107,7 @@ function buyItems(toBuy, upgradeType) {
   if (objToPurchase.price <= packageCount) {
     objToPurchase.quantity++
     packageCount -= objToPurchase.price
-    objToPurchase.price = Math.floor(objToPurchase.price * 1.1)
+    objToPurchase.price = Math.ceil(objToPurchase.price * 1.1)
     updateButtons(toBuy)
     update()
     drawFleet()

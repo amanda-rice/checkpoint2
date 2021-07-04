@@ -7,39 +7,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-  <link rel="stylesheet" href="superhero.css">
   <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="superhero.css">
   <link rel="stylesheet" href="style.css">
   <title>Clicker Game</title>
 </head>
 
 <body>
   <header class="container-fluid bg-light text-dark">
-    <div class="row text-center align-items-start">
-      <div class="col-3 align-self-center" id="badge">
-        <img src="intern.png" class="badge-img" alt="">
+    <div class="row align-items-start">
+      <div class="col-md-6 align-self-center" id="badge">
+        <img src="pics/maverick.png" class="badge-img" alt="">
+        <img src="pics/sparrow.png" class="badge-img" alt="">
+        <img src="pics/bezos.png" class="badge-img" alt="">
+        <img src="pics/10k.png" class="badge-img" alt="">
+        <img src="pics/diversified.png" class="badge-img" alt="">
       </div>
-      <div class="col-9 text-right">
-        <p class="custom-font text-break" id="package-count"></p>
-        <h2>Package Count</h2>
+      <div class="col-md-6 text-right align-items-end">
+        <h2>Package Count <span class="text-break" id="package-count"></span></h2>
       </div>
     </div>
   </header>
-  <main class="container-fluid grow py-5 text-light bg-secondary">
-    <div class="row justify-content-around d-flex">
-      <div class="col-md-3 bg-dark shadow-sm text-center d-flex flex-column p-0">
-        <div class="flex-fill">
+  <main class="container-fluid grow text-light bg-secondary">
+    <div class="row justify-content-around py-5 d-flex">
+      <div class="col-md-3 order-last order-md-first bg-dark shadow-sm text-center d-flex flex-column p-0">
+        <div class="flex-fill sml-hidden">
           <h1 class="px-3 pt-3">Fleet:</h1>
-          <div class="px-3" id="gas-fleet"></div>
+          <div class="px-3" id="garages-fleet"></div>
+          <div class="px-3" id="warehouses-fleet"></div>
           <div class="px-3" id="trucks-fleet"></div>
           <div class="px-3" id="drones-fleet"></div>
+          <div class="px-3" id="trains-fleet"></div>
+          <div class="px-3" id="boats-fleet"></div>
           <div class="px-3 pb-3" id="planes-fleet"></div>
         </div>
         <div class=" bg-light bottom-col text-dark text-left">
           <h4 class="px-3 pt-3">Fleet Counts</h4>
-          <div class="px-3">Gas: <span id="gas-fleet-num"></span></div>
+          <div class="px-3">Garages: <span id="garages-fleet-num"></span></div>
+          <div class="px-3">Warehouses: <span id="warehouses-fleet-num"></span></div>
           <div class="px-3">Trucks: <span id="trucks-fleet-num"></span></div>
           <div class="px-3">Drones: <span id="drones-fleet-num"></span></div>
+          <div class="px-3">Trains: <span id="trains-fleet-num"></span></div>
+          <div class="px-3">Boats: <span id="boats-fleet-num"></span></div>
           <div class="px-3 pb-3">Planes: <span id="planes-fleet-num"></span></div>
 
         </div>
@@ -47,7 +59,7 @@
       <div class="col-md-4 shadow-sm align-self-start">
         <div class="row hero-img align-items-center justify-content-center">
           <div class="col-12 d-flex justify-content-center">
-            <img class="click-img" src="box.png" onclick="mine()" alt="clicker-img">
+            <img class="click-img" src="pics/box.png" onclick="mine()" alt="clicker-img">
           </div>
         </div>
       </div>
@@ -55,7 +67,7 @@
       </div>
     </div>
   </main>
-  <footer class="text-center">
+  <footer class="text-center py-2">
     <p class="p-0">Made with ❤ by Amanda Rice</p>
   </footer>
   <script src="script.js"></script>

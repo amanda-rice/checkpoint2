@@ -1,11 +1,25 @@
+
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-family: 'Staatliches', cursive;
 }
 
 main{
   flex-grow: 1;
+}
+h1{
+    font-family: 'Staatliches', cursive;
+}
+h2{
+    font-family: 'Staatliches', cursive;
+}
+h3{
+    font-family: 'Staatliches', cursive;
+}
+h4{
+    font-family: 'Staatliches', cursive;
 }
 .custom-height{
   height: 500px;
@@ -15,10 +29,19 @@ main{
   width: 200px
 }
 .hero-img {
-  min-height: 65vh;
+  min-height: 75vh;
   background-image: url(https://media.giphy.com/media/tQgB6lM6XCle8/giphy.gif);
   background-size: cover;
 }
+@media only screen and (max-width: 768px) {
+  .sml-hidden {
+    display: none;
+  }
+  .hero-img{
+  min-height: 50vh;
+}
+}
+
 .custom-icon{
   font-size: 75pt;
 }
