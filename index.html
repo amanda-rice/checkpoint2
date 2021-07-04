@@ -19,15 +19,8 @@
 <body>
   <header class="container-fluid bg-light text-dark">
     <div class="row align-items-start">
-      <div class="col-md-6 align-self-center" id="badge">
-        <img src="pics/maverick.png" class="badge-img" alt="">
-        <img src="pics/sparrow.png" class="badge-img" alt="">
-        <img src="pics/bezos.png" class="badge-img" alt="">
-        <img src="pics/10k.png" class="badge-img" alt="">
-        <img src="pics/diversified.png" class="badge-img" alt="">
-      </div>
-      <div class="col-md-6 text-right align-items-end">
-        <h2>Package Count <span class="text-break" id="package-count"></span></h2>
+      <div class="col pt-2 text-center align-items-center">
+        <h2 class="p-0">Package Count: <span class="text-break" id="package-count"></span></h2>
       </div>
     </div>
   </header>
@@ -44,16 +37,27 @@
           <div class="px-3" id="boats-fleet"></div>
           <div class="px-3 pb-3" id="planes-fleet"></div>
         </div>
-        <div class=" bg-light bottom-col text-dark text-left">
-          <h4 class="px-3 pt-3">Fleet Counts</h4>
-          <div class="px-3">Garages: <span id="garages-fleet-num"></span></div>
-          <div class="px-3">Warehouses: <span id="warehouses-fleet-num"></span></div>
-          <div class="px-3">Trucks: <span id="trucks-fleet-num"></span></div>
-          <div class="px-3">Drones: <span id="drones-fleet-num"></span></div>
-          <div class="px-3">Trains: <span id="trains-fleet-num"></span></div>
-          <div class="px-3">Boats: <span id="boats-fleet-num"></span></div>
-          <div class="px-3 pb-3">Planes: <span id="planes-fleet-num"></span></div>
-
+        <div class="row bg-light m-0 p-0">
+          <div class="col-6">
+            <div class=" bg-light bottom-col text-dark text-left">
+              <h4 class="px-3 pt-3">Fleet Counts</h4>
+              <div class="px-3">Garages: <span id="garages-fleet-num"></span></div>
+              <div class="px-3">Warehouses: <span id="warehouses-fleet-num"></span></div>
+              <div class="px-3">Trucks: <span id="trucks-fleet-num"></span></div>
+              <div class="px-3">Drones: <span id="drones-fleet-num"></span></div>
+              <div class="px-3">Trains: <span id="trains-fleet-num"></span></div>
+              <div class="px-3">Boats: <span id="boats-fleet-num"></span></div>
+              <div class="px-3 pb-3">Planes: <span id="planes-fleet-num"></span></div>
+            </div>
+          </div>
+          <div class="col-md-6  text-left d-flex justify-content-center align-items-center" id="badge">
+            <div class="text-dark bg-light">
+              <img src="pics/maverick.png" class="badge-img" alt="">
+              <img src="pics/sparrow.png" class="badge-img" alt="">
+              <img src="pics/maverick.png" class="badge-img" alt="">
+              <img src="pics/sparrow.png" class="badge-img" alt="">
+            </div>
+          </div>
         </div>
       </div>
       <div class="col-md-4 shadow-sm align-self-start">
