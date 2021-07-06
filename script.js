@@ -76,12 +76,12 @@ let autoUpgrades = {
     image: 'bx:bxs-plane-alt',
     reached: false
   },
-  ufos: {
-    name: 'UFOs',
+  rocketShips: {
+    name: 'Rocket Ships',
     price: 50000,
     quantity: 0,
     multiplier: 250,
-    image: 'ps: ufo',
+    image: 'ph:rocket-launch-fill',
     reached: false
   }
 

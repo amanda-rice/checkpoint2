@@ -34,20 +34,15 @@ h4{
   background-image: url(https://media.giphy.com/media/tQgB6lM6XCle8/giphy.gif);
   background-size: cover;
 }
-@media only screen and (max-width: 768px) {
-  .sml-hidden {
-    display: none;
-  }
-  .hero-img{
-  min-height: 50vh;
-}
-}
-
 .custom-icon{
   font-size: 75pt;
 }
 .custom-font{
   font-size: 50pt;
+}
+.shop-col-scroll{
+  max-height: 75vh;
+  overflow: auto;
 }
 .bottom-col{
   float: none;
@@ -56,4 +51,15 @@ h4{
 }
 .badge-img{
   max-height: 100px;
+}
+@media only screen and (max-width: 768px) {
+  .sml-hidden {
+    display: none;
+  }
+  .hero-img{
+  min-height: 50vh;
+}
+.shop-col-scroll{
+  max-height: 50vh;
+}
 }
