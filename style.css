@@ -52,6 +52,10 @@ h4{
 .badge-img{
   max-height: 100px;
 }
+.add-padding{
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
 @media only screen and (max-width: 768px) {
   .sml-hidden {
     display: none;
@@ -61,5 +65,11 @@ h4{
 }
 .shop-col-scroll{
   max-height: 50vh;
+}
+.add-sm-border{
+  margin:10px;
+}
+.rmv-padding{
+  padding: 10px;
 }
 }
