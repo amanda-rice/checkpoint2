@@ -20,33 +20,49 @@ let clickUpgrades = {
 }
 
 let autoUpgrades = {
-  trucks: {
-    name: 'Trucks',
+  deliveryPeople: {
+    name: 'Delivery People',
     price: 50,
     quantity: 0,
     multiplier: 10,
+    image: 'ic:baseline-directions-walk',
+    reached: false
+  },
+  bikes: {
+    name: 'Bikes',
+    price: 100,
+    quantity: 0,
+    multiplier: 15,
+    image: 'healthicons:bike',
+    reached: false
+  },
+  trucks: {
+    name: 'Trucks',
+    price: 500,
+    quantity: 0,
+    multiplier: 25,
     image: 'icomoon-free:truck',
     reached: false
   },
   drones: {
     name: 'Drones',
-    price: 150,
+    price: 1000,
     quantity: 0,
-    multiplier: 20,
+    multiplier: 50,
     image: 'healthicons:drone',
     reached: false
   },
   trains: {
     name: 'Trains',
-    price: 500,
+    price: 3000,
     quantity: 0,
-    multiplier: 50,
+    multiplier: 75,
     image: 'ic:baseline-train',
     reached: false
   },
   boats: {
     name: 'Boats',
-    price: 3000,
+    price: 10000,
     quantity: 0,
     multiplier: 100,
     image: 'ic:round-directions-boat',
@@ -54,10 +70,18 @@ let autoUpgrades = {
   },
   planes: {
     name: 'Planes',
-    price: 10000,
+    price: 20000,
+    quantity: 0,
+    multiplier: 200,
+    image: 'bx:bxs-plane-alt',
+    reached: false
+  },
+  ufos: {
+    name: 'UFOs',
+    price: 50000,
     quantity: 0,
     multiplier: 250,
-    image: 'bx:bxs-plane-alt',
+    image: 'ps: ufo',
     reached: false
   }
 
@@ -94,7 +118,23 @@ function isReached() {
 function update() {
   document.getElementById('package-count').innerText = packageCount
 }
-
+function drawFleetCounts() {
+  let template = ``
+  template += `
+  <h4 class="px-3 pt-3">Fleet Counts</h4>
+  `
+  for (let key in clickUpgrades) {
+    let type = clickUpgrades[key]
+    template +=
+      `<div class="px-3">${type.name}: <span id="${key}-fleet-num"></span></div>`
+  }
+  for (let key in autoUpgrades) {
+    let type = autoUpgrades[key]
+    template +=
+      `<div class="px-3">${type.name}: <span id="${key}-fleet-num"></span></div>`
+  }
+  document.getElementById('fleet-counts').innerHTML = template
+}
 function buyItems(toBuy, upgradeType) {
   console.log(toBuy, upgradeType)
   let objToPurchase = {}
@@ -134,7 +174,7 @@ function drawButtons() {
       <div class = "col-12 d-flex justify-content-between align-items-center">
       <p class="iconify custom-icon" id="${key}-button" onclick="buyItems('${key}', 'click')" data-icon="${type.image}" data-inline="false">
       <h3 id="${key}-price">${type.price}</h3>
-      <h3>x${type.multiplier}</h3>
+      <h3>+${type.multiplier}</h3>
       </p>
       </div>
       </div>
@@ -153,7 +193,7 @@ function drawButtons() {
       <div class = "col-12 d-flex justify-content-between align-items-center">
       <p class="iconify custom-icon" id="${key}-button" onclick="buyItems('${key}', 'auto')" data-icon="${type.image}" data-inline="false">
       <h3 id="${key}-price">${type.price}</h3>
-      <h3>x${type.multiplier}</h3>
+      <h3>+${type.multiplier}</h3>
       </p>
       </div>
       </div>
@@ -210,6 +250,22 @@ function drawFleet() {
     document.getElementById(`${key}-fleet`).innerHTML = template
   }
 }
+function drawFleetIcons() {
+  let template = `
+   <h1 class="px-3 pt-3">Fleet:</h1>
+      `
+  for (let key in clickUpgrades) {
+    let type = clickUpgrades[key]
+    template +=
+      `<div class="px-3" id="${key}-fleet"></div>`
+  }
+  for (let key in autoUpgrades) {
+    let type = autoUpgrades[key]
+    template +=
+      `<div class="px-3" id="${key}-fleet"></div>`
+  }
+  document.getElementById('fleet-icons').innerHTML = template
+}
 
 function collectAutoUpgrades() {
   let autoModifier = 0
@@ -230,4 +286,6 @@ function startInterval() {
 update()
 startInterval()
 drawButtons()
+drawFleetCounts()
+drawFleetIcons()
 drawFleet()

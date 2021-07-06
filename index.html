@@ -27,30 +27,15 @@
   <main class="container-fluid grow text-light bg-secondary">
     <div class="row justify-content-around py-5 d-flex">
       <div class="col-md-3 order-last order-md-first bg-dark shadow-sm text-center d-flex flex-column p-0">
-        <div class="flex-fill sml-hidden">
-          <h1 class="px-3 pt-3">Fleet:</h1>
-          <div class="px-3" id="garages-fleet"></div>
-          <div class="px-3" id="warehouses-fleet"></div>
-          <div class="px-3" id="trucks-fleet"></div>
-          <div class="px-3" id="drones-fleet"></div>
-          <div class="px-3" id="trains-fleet"></div>
-          <div class="px-3" id="boats-fleet"></div>
-          <div class="px-3 pb-3" id="planes-fleet"></div>
+        <div class="flex-fill sml-hidden" id="fleet-icons">
         </div>
         <div class="row bg-light m-0 p-0">
           <div class="col-6">
-            <div class=" bg-light bottom-col text-dark text-left">
-              <h4 class="px-3 pt-3">Fleet Counts</h4>
-              <div class="px-3">Garages: <span id="garages-fleet-num"></span></div>
-              <div class="px-3">Warehouses: <span id="warehouses-fleet-num"></span></div>
-              <div class="px-3">Trucks: <span id="trucks-fleet-num"></span></div>
-              <div class="px-3">Drones: <span id="drones-fleet-num"></span></div>
-              <div class="px-3">Trains: <span id="trains-fleet-num"></span></div>
-              <div class="px-3">Boats: <span id="boats-fleet-num"></span></div>
-              <div class="px-3 pb-3">Planes: <span id="planes-fleet-num"></span></div>
+            <div class=" bg-light bottom-col text-dark text-left" id="fleet-counts">
+
             </div>
           </div>
-          <div class="col-md-6  text-left d-flex justify-content-center align-items-center" id="badge">
+          <div class="col-6  text-left d-flex justify-content-center align-items-center" id="badge">
             <div class="text-dark bg-light">
               <img src="pics/maverick.png" class="badge-img" alt="">
               <img src="pics/sparrow.png" class="badge-img" alt="">
