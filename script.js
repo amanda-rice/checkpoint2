@@ -64,7 +64,7 @@ let autoUpgrades = {
     name: 'Boats',
     price: 10000,
     quantity: 0,
-    multiplier: 100,
+    multiplier: 150,
     image: 'ic:round-directions-boat',
     reached: false
   },
@@ -72,7 +72,7 @@ let autoUpgrades = {
     name: 'Planes',
     price: 20000,
     quantity: 0,
-    multiplier: 200,
+    multiplier: 300,
     image: 'bx:bxs-plane-alt',
     reached: false
   },
@@ -80,7 +80,7 @@ let autoUpgrades = {
     name: 'Rocket Ships',
     price: 50000,
     quantity: 0,
-    multiplier: 250,
+    multiplier: 500,
     image: 'ph:rocket-launch-fill',
     reached: false
   }
