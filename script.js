@@ -121,18 +121,20 @@ function update() {
 function drawFleetCounts() {
   let template = ``
   template += `
-  <h4 class="px-3 pt-3">Fleet Counts</h4>
+  <h4 class="px-3 pt-3">Asset Counts</h4>
+  <div class="row">
   `
   for (let key in clickUpgrades) {
     let type = clickUpgrades[key]
     template +=
-      `<div class="px-3">${type.name}: <span id="${key}-fleet-num"></span></div>`
+      `<div class="px-3 col-6">${type.name}: <span id="${key}-fleet-num"></span></div>`
   }
   for (let key in autoUpgrades) {
     let type = autoUpgrades[key]
     template +=
-      `<div class="px-3">${type.name}: <span id="${key}-fleet-num"></span></div>`
+      `<div class="px-3 col-6">${type.name}: <span id="${key}-fleet-num"></span></div>`
   }
+  template += `</div>`
   document.getElementById('fleet-counts').innerHTML = template
 }
 function buyItems(toBuy, upgradeType) {
@@ -156,15 +158,10 @@ function buyItems(toBuy, upgradeType) {
 }
 
 function drawButtons() {
+
   let template = `
-    <div class="row" >
-      <div class="col-12 d-flex justify-content-around align-items-center">
-        <h3>Shop</h3>
-          <h3>Price</h3>
-          <h3>Multiplier</h3>
-      </div>
-      </div>
-      `
+  <h1>Shop:</h1>
+  `
   for (let key in clickUpgrades) {
     let type = clickUpgrades[key]
     if (type.reached) {
@@ -173,7 +170,7 @@ function drawButtons() {
       <div class="row">
       <div class = "col-12 d-flex justify-content-between align-items-center">
       <p class="iconify custom-icon" id="${key}-button" onclick="buyItems('${key}', 'click')" data-icon="${type.image}" data-inline="false">
-      <h3 id="${key}-price">${type.price}</h3>
+      <h3 id="${key}-price">${type.price}   <span class="iconify" data-icon="fluent:box-16-filled" data-inline="false"></span></h3>
       <h3>+${type.multiplier}</h3>
       </p>
       </div>
@@ -192,7 +189,7 @@ function drawButtons() {
       <div class="row">
       <div class = "col-12 d-flex justify-content-between align-items-center">
       <p class="iconify custom-icon" id="${key}-button" onclick="buyItems('${key}', 'auto')" data-icon="${type.image}" data-inline="false">
-      <h3 id="${key}-price">${type.price}</h3>
+      <h3 id="${key}-price">${type.price}   <span class="iconify" data-icon="fluent:box-16-filled" data-inline="false"></span></h3>
       <h3>+${type.multiplier}</h3>
       </p>
       </div>
@@ -208,13 +205,13 @@ function updateButtons(name) {
     let type = clickUpgrades[name]
     let template = `
       `
-    document.getElementById(`${name}-price`).innerText = type.price
+    document.getElementById(`${name}-price`).innerHTML = `${type.price} <span class="iconify" data-icon="fluent:box-16-filled" data-inline="false"></span>`
   }
   else {
     let type = autoUpgrades[name]
     let template = `
       `
-    document.getElementById(`${name}-price`).innerText = type.price
+    document.getElementById(`${name}-price`).innerHTML = `${type.price} <span class="iconify" data-icon="fluent:box-16-filled" data-inline="false"></span>`
   }
 }
 
@@ -252,7 +249,7 @@ function drawFleet() {
 }
 function drawFleetIcons() {
   let template = `
-   <h1 class="px-3 pt-3">Fleet:</h1>
+   <h1 class="px-3 pt-3">Assets:</h1>
       `
   for (let key in clickUpgrades) {
     let type = clickUpgrades[key]
