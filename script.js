@@ -121,7 +121,7 @@ function update() {
 function drawFleetCounts() {
   let template = ``
   template += `
-  <h4 class="px-3 pt-3">Asset Counts</h4>
+  <h4 class="pt-3">Asset Counts</h4>
   <div class="row">
   `
   for (let key in clickUpgrades) {
@@ -168,7 +168,7 @@ function drawButtons() {
       template +=
         `
       <div class="row">
-      <div class = "col-12 d-flex justify-content-between align-items-center">
+      <div class = "col-12 d-flex justify-content-between align-items-center" title="${type.name}- Click Update">
       <p class="iconify custom-icon" id="${key}-button" onclick="buyItems('${key}', 'click')" data-icon="${type.image}" data-inline="false">
       <h3 id="${key}-price">${type.price}   <span class="iconify" data-icon="fluent:box-16-filled" data-inline="false"></span></h3>
       <h3>+${type.multiplier}</h3>
@@ -187,7 +187,7 @@ function drawButtons() {
       template +=
         `
       <div class="row">
-      <div class = "col-12 d-flex justify-content-between align-items-center">
+      <div class = "col-12 d-flex justify-content-between align-items-center" title="${type.name}- Auto Update">
       <p class="iconify custom-icon" id="${key}-button" onclick="buyItems('${key}', 'auto')" data-icon="${type.image}" data-inline="false">
       <h3 id="${key}-price">${type.price}   <span class="iconify" data-icon="fluent:box-16-filled" data-inline="false"></span></h3>
       <h3>+${type.multiplier}</h3>
